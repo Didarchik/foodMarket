@@ -1,0 +1,121 @@
+$breakpoint-small: 300px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 1000px;
+
+@mixin respond-to($size){
+    @if $size == small{
+        @media (min-width: $breakpoint-small) {@content ;}
+    }
+    @else if $size == medium{
+        @media (min-width: $breakpoint-medium) {@content ;}
+    }
+    @else if $size == large{
+        @media (min-width: $breakpoint-large) {@content ;}
+    }
+}
+
+.info_block{
+    margin-top: 100px;
+    .upperBlock{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: none;
+        border: none;
+        @include respond-to(small){
+            width: 350px;
+        }
+        @include respond-to(medium){
+            width: 750px;
+
+        }
+        .info{
+            font-size: 20px;
+            font-weight: 700;
+            color: orange;
+        }
+        .title{
+            font-weight: 700;
+            @include respond-to(small){
+                font-size: 25px;
+            }
+            @include respond-to(medium){
+                font-size: 40px;
+            }
+            @include respond-to(large){
+                font-size: 50px;
+            }
+        }
+        .cardText{
+            color: rgb(130, 130, 130);
+            @include respond-to(small){
+                font-size: 15px;
+            }
+            @include respond-to(medium){
+                font-size: 20px;
+            }
+            @include respond-to(large){
+                font-size: 25px;
+            }
+        }
+    }
+
+
+    .lowerBlock{
+        position: relative;
+        margin: 50px;
+        .items{
+            align-items: center;
+            margin: 20px;
+            padding: 20px 15px;
+
+            @include respond-to(small){
+                width: 200px;
+            }
+            @include respond-to(medium){
+                width: 200px;
+            }
+            @include respond-to(large){
+                width: 300px;
+                height: 500px;
+            }
+            .itemTitle{
+                font-weight: 700;
+
+                padding: 20px;
+                @include respond-to(small){
+                    font-size: 20px;
+                }
+                @include respond-to(medium){
+                    font-size: 25px;
+                }
+                @include respond-to(large){
+                    font-size: 30px;                
+                }
+            }
+            .itemText{
+                font-weight: 500;
+                @include respond-to(small){
+                    font-size: 12.5px;
+                }
+                @include respond-to(medium){
+                    font-size: 15px;
+                }
+                @include respond-to(large){
+                    font-size: 20px;                
+                }
+            }
+            img{
+                @include respond-to(small){
+                    width: 50px;
+                }
+                @include respond-to(medium){
+                    width: 80px;
+                }
+                @include respond-to(large){
+                    width: 150px;                
+                }
+            }
+        }
+    }
+}
