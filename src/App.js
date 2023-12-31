@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Info from './components/Info/Info';
+import Testinomial from './components/Testinomial/Testinomial';
 import {useRef} from "react"
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Home inputRef={inputRef}/>
       <About inputRef={inputRef} focus={focus}/>
       <Info inputRef={inputRef}/>
+      <Testinomial />
     </div>
   );
 }

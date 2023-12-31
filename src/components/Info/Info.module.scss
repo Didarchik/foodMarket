@@ -48,6 +48,7 @@ $breakpoint-large: 1000px;
         }
         .cardText{
             color: rgb(130, 130, 130);
+            text-align: center;
             @include respond-to(small){
                 font-size: 15px;
             }

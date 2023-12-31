@@ -1,0 +1,107 @@
+$breakpoint-small: 300px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 1000px;
+
+@mixin respond-to($size){
+    @if $size == small{
+        @media (min-width: $breakpoint-small) {@content ;}
+    }
+    @else if $size == medium{
+        @media (min-width: $breakpoint-medium) {@content ;}
+    }
+    @else if $size == large{
+        @media (min-width: $breakpoint-large) {@content ;}
+    }
+}
+*{
+    font-family: "Montserrat", 'sans-serif';
+}
+.testBlock{
+    background-color: rgba(255, 255, 255, 0.123);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .upperBlock{
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        .testinomial{
+            color: orange;
+            font-weight: 700;
+            font-size: 20px;
+        }     
+        .title{
+            font-weight: 700;
+            @include respond-to(small){
+                font-size: 25px;
+            }
+            @include respond-to(medium){
+                font-size: 40px;
+            }
+            @include respond-to(large){
+                font-size: 50px;
+            }
+        }
+        .cardText{
+            color: rgb(130, 130, 130);
+            text-align: center;
+            @include respond-to(small){
+                font-size: 15px;
+                width: 400px;
+            }
+            @include respond-to(medium){
+                font-size: 20px;
+                width: 700px;
+            }
+            @include respond-to(large){
+                font-size: 25px;
+            }
+        }
+    }
+
+    .lowerBlock{
+        margin-top: 70px;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: #FFFFFF;
+        align-items: center;
+        @include respond-to(small){
+            width: 450px;
+        }
+        @include respond-to(medium){
+            width: 800px;
+
+        } 
+        .avatar {
+            @include respond-to(small){
+                width: 60px;
+                height: 60px;
+            }
+            @include respond-to(medium){
+                width: 110px;
+                height: 110px;
+            }
+        }
+        .rating{
+            width: 230px;
+            height: 42px;
+        }
+        .title, .name{
+            font-weight: 700;
+            color: #515151;
+            text-align: center;
+            @include respond-to(small){
+                font-size: 15px;
+            }
+            @include respond-to(medium){
+                font-size: 20px;
+            }
+            @include respond-to(large){
+                font-size: 25px;
+            }
+        }
+
+    }
+}
