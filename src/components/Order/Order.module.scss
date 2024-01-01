@@ -1,0 +1,44 @@
+.orderPage{
+    border: 2px solid black;
+    .upperBlock{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ul{
+            display: flex;
+            margin-left: -20px;
+            li{
+                padding-left: 20px;
+                list-style-type: none;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+
+    .foodBlock{
+        .card{
+            width: 300px;
+            margin: 20px;
+            .img{
+                width: 250px;
+                height: 250px;
+            }
+            .title{
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            .btn{
+                background-color: orange;
+                border-color: orange;
+                &:hover{
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+}

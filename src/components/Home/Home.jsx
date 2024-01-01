@@ -3,8 +3,9 @@ import style from './Home.module.scss'
 import {Card, Button} from "react-bootstrap"
 import foodPicture from "../../assets/img/food.webp"
 import ReactTyped from "react-typed"
-
 import { Context } from '../../App'
+import { Link } from "react-router-dom"
+
 function Home() {
   const {inputRef} = useContext(Context);
   return (
@@ -16,7 +17,7 @@ function Home() {
               Foodie Pizza бұл {" "} 
               <ReactTyped strings={["дәмді пицца", "тегін сусындар", "атмосфералық өлеңдер"]} typeSpeed={100} loop/>
               </Card.Text>
-              <Button variant='alert' className='btn2 d-flex' >Тапсырыс беру</Button>
+              <Link to='/order'><Button variant='alert' className='btn2 d-flex' >Тапсырыс беру</Button></Link>
             </Card.Body>
           </Card>
             <img src={foodPicture} />
