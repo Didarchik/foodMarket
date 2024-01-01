@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import style from "./Testinomial.module.scss"
 import avatar from "../../assets/img/avatar.png"
 import rating from "../../assets/img/ratings.png"
+import {Context} from "../../App"
 function Testinomial() {
+  const {inputRef} = useContext(Context);
   return (
-    <div className={style.testBlock}>
+    <div className={style.testBlock} tabIndex="0" ref={el => inputRef.current[3] = el}>
         <Card className={style.upperBlock}>
             <Card.Title className={style.testinomial}>Testinomial</Card.Title>
             <Card.Title className={style.title}>What They Are Saying</Card.Title>

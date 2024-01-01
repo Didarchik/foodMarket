@@ -6,32 +6,22 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Info from './components/Info/Info';
 import Testinomial from './components/Testinomial/Testinomial';
-import {useRef} from "react"
+import UseFocusManager from './hooks/UseFocusManager';
+import { createContext } from 'react';
 
+export const Context = createContext();
 function App() {
-  const inputRef = useRef([])
-  const focus = (e) => {
-    if (e.target.textContent == 'Біз жайлы'){
-      inputRef.current[1].focus();
-      console.log(inputRef.current[1]);
-    }
-    else if (e.target.textContent == 'Негізгі'){
-      inputRef.current[0].focus();
-      console.log(inputRef.current[0]);
-    }
-    else{
-      inputRef.current[2].focus();
-      console.log(inputRef.current[2]);
-    }
-  }
+  const {inputRef, focus} = UseFocusManager();
   return (
-    <div className="App">
-      <Header inputRef={inputRef} focus={focus}/>
-      <Home inputRef={inputRef}/>
-      <About inputRef={inputRef} focus={focus}/>
-      <Info inputRef={inputRef}/>
-      <Testinomial />
-    </div>
+    <Context.Provider value={{inputRef, focus}}>
+      <div className="App">
+        <Header />
+        <Home />
+        <About />
+        <Info />
+        <Testinomial />
+      </div>
+    </Context.Provider>
   );
 }
 

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import style from './Home.module.scss'
 import {Card, Button} from "react-bootstrap"
 import foodPicture from "../../assets/img/food.webp"
 import ReactTyped from "react-typed"
-function Home({inputRef}) {
+
+import { Context } from '../../App'
+function Home() {
+  const {inputRef} = useContext(Context);
   return (
     <div className='home_page' ref={el => inputRef.current[0] = el}>
           <Card className='card'>

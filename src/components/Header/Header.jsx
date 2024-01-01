@@ -1,16 +1,19 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useContext} from 'react'
 import style from './Header.module.scss'
 import MyPhoto from "../../assets/bag.png"
 import logo from "../../assets/FOODIE.svg"
 import {Button, Card, Accordion, ProgressBar, Navbar, Container, Nav} from "react-bootstrap"
+import { Context } from '../../App'
 
 
-function Header({inputRef, focus}) {
+function Header() {
   const [toggle, setToggle] = useState(false);
   const handle = () => {
     setToggle(prev => !prev);
     console.log(toggle);
   }
+
+  const {inputRef, focus} = useContext(Context);
   return (
     <div className='header'>
       <Navbar expand='lg' data-bs-theme="light" expanded={toggle}>

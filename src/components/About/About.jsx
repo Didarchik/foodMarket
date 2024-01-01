@@ -1,10 +1,13 @@
-import React, { useReducer, useRef } from 'react'
+import React, { useCallback, useContext, useReducer, useRef } from 'react'
 import foodPhoto from "../../assets/img/aboutFood.png"
 import videoIcon from "../../assets/videoButton.png"
 import {Card, Button} from "react-bootstrap"
 import style from "./About.module.scss"
+import { Context } from '../../App'
 
-function About({inputRef, focus}) {
+
+function About() {
+  const {inputRef} = useContext(Context);
   return (
     <div className={style.about_page} tabIndex="0" ref={el=> inputRef.current[1] = el}>
         <img src={foodPhoto} />

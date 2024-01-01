@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import style from "./Info.module.scss"
 import {Card, Button} from "react-bootstrap"
 import pickMeal from "../../assets/pickMeal.png"
 import truckIcon from "../../assets/truck.png"
 import fingerIcon from "../../assets/finger.png"
-function Info({inputRef}) {
+import {Context} from "../../App"
+
+
+function Info() {
+  const {inputRef} = useContext(Context);
   return (
     <div tabIndex="0" ref={el => inputRef.current[2] = el} className={`d-flex align-items-center flex-column ${style.info_block}`}>
         <Card className={style.upperBlock}>
